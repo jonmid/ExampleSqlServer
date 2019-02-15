@@ -1,0 +1,419 @@
+***************************************
+*** PONER COMENTARIOS
+***************************************
+OPCION 1: // Comentario de una sola linea
+OPCION 2: /* Comentario de muchas lineas */
+OPCION 3: /// Para comentar metodos de clase
+OPCION 4:	#region Imprimir
+					#endregion
+
+
+***************************************
+*** IMPRIMIR POR CONSOLA
+***************************************
+// Imprime por consola
+Console.WriteLine("Hola a mi primer programa en C#");
+
+// Leer datos ingresados por consola
+Console.WriteLine("Ingresar nombre: ");
+nombre = Console.ReadLine();
+Console.WriteLine("Tu nombre es: "+ nombre);
+
+// Esta linea permite que no se cierre la consola hasta que se presione una tecla
+Console.ReadKey();
+
+
+***************************************
+*** MANEJO Y TIPOS DE VARIBLES
+***************************************
+int num1 = 32; // De tipo entero
+int? num11 = null; // (enteros - null)
+byte num2 = 255; // De tipo entero (0 - 255)
+double num3 = 203.45; // De tipo doble
+float num4 = 203.45f; // De tipo flotante
+decimal num5 = 203.45m; // De tipo decimal
+
+bool estado = true; // De tipo booleano (true - false)
+bool? estado2 = null; // (true - false - null)
+
+string nombre = "jonathan"; // De tipo cadena
+char sexo = 'M'; // De tipo caracter (un solo caracter)
+char unCaracter = nombre[0];
+
+var apellido = 34; // De tipo implicito
+
+const int edad = 32; // De tipo constante (No cambia el valor)
+
+// De tipo enum (No cambia el valor)
+public enum Meses
+{
+	Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre
+};
+Console.WriteLine("Mes actual: " + Meses.Enero);
+
+
+***************************************
+*** OPERADORES MATEMATICOS
+***************************************
+int a = 10;
+int b = 30;
+
+// Suma
+int suma = a + b;
+// Resta
+int resta = a + b;
+// Multiplicacion
+int multiplicacion = a * b;
+// Division
+int division = a / b;
+// Resto de una division
+int restoDivision = a % b;
+
+
+***************************************
+*** OPERADORES DE ASIGNACION
+***************************************
+int a = 10;
+int b = 30;
+
+int incremento = a += b; // Incremento
+int decremento = a -= b; // Decremento
+int multi = a *= b; // Multiplicacion
+
+
+***************************************
+*** OPERADORES RELACIONALES
+***************************************
+int a = 10;
+int b = 30;
+
+bool igualdad = a == b; // Igual a
+bool diferente = a != b; // Diferente de
+bool mayor = a > b; // Mayor que
+bool menor = a < b; // Menor que
+bool mayorIgual = a >= b; // Mayor o igual a
+bool menor = a <= b; // Menor o igual a
+
+
+***************************************
+*** OPERADORES LOGICOS
+***************************************
+int a = 10;
+int b = 30;
+
+bool and = a > b && a < b; // Condicion Y (&&)
+bool or = a > b || a < b; // Condicion O (||)
+bool not = !(a == b); // Condicion NOT (!)
+
+
+***************************************
+*** CONDICIONALES
+***************************************
+int a = 10;
+int b = 30;
+
+if (a == b){
+	Console.WriteLine("Los numeros son iguales.");
+}else{
+	Console.WriteLine("Los numeros son diferentes.");
+}
+
+if (a == b){
+	Console.WriteLine("Los numeros son iguales.");
+} else if (a > b){
+	Console.WriteLine("El numero A es mayor que B");
+} else{
+	Console.WriteLine("El numero B es mayor que A");
+}
+
+int a = 10;
+int b = 30;
+int opcion = 3;
+
+switch (opcion)
+{
+	case 1: // Sumar
+		Console.WriteLine("{0} + {1} = {2}", a, b, (a + b));
+		break;
+	case 2: // Restar
+		Console.WriteLine("{0} - {1} = {2}", a, b, (a - b));
+		break;
+	case 3: // Multiplicar
+		Console.WriteLine("{0} * {1} = {2}", a, b, (a * b));
+		break;
+	default:
+		Console.WriteLine("La opcion ingresada no existe.");
+		break;
+}
+
+
+***************************************
+*** CICLOS
+***************************************
+for (int i = 0; i < 10; i++)
+{
+	Console.WriteLine("Numero {0}", i);
+	Console.WriteLine($"Numero {i}");
+}
+
+int cont = 0;
+while(cont < 10)
+{
+	Console.WriteLine("Numero {0}", cont);
+	Console.WriteLine($"Numero {cont}");
+	cont++;
+}
+
+Console.WriteLine("Ingresa numeros enteros para sumar.");
+Console.WriteLine("Presione 0 para finalizar");
+
+int suma = 0;
+int numASumar;
+do
+{
+	numASumar = int.Parse(Console.ReadLine());
+	suma += numASumar;
+}
+while (numASumar != 0);
+Console.WriteLine("Total suma: {0}", suma);
+
+int[] valores = {3, 5, 2, 1, 5, 3, 7, 9, 8};
+foreach (int i in valores)
+{
+   Console.Write("{0} ", i);
+}
+
+
+***************************************
+*** ESTRUCTURA DE DATOS TIPO VECTOR
+***************************************
+char[] vocales = new char[5];
+int[] conteo = new int[10];
+object[] misObjetos = new object[3];
+
+char[] vocales = new char[5] { 'a', 'e', 'i', 'o', 'u' };
+int[] conteo = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+object[] misObjetos = { "3", 1, 99.99 };
+
+Console.WriteLine(vocales.Length); // 5
+Console.WriteLine(conteo.Length); // 10
+Console.WriteLine(misObjetos.Length); // 3
+ 
+//vectores multidimensionales
+int[,] valores1; //sin inicializar
+int[,] valores2 = new int[3,7];
+
+//Arreglo de tres dimensiones
+int[,,] valores3 = new int[3,4,2];
+ 
+//Arreglo de arreglos
+int[][] matriz; //sin inicializar
+ 
+//Los arreglos de arreglos se inicializan de manera diferente
+int[][] matriz = new int[3][];
+for (int i = 0; i < matriz.Length; i++)
+{
+   matriz[i] = new int[4];
+}
+
+int[,] numeros = new int[3, 4] { {1, 2,3,4}, {9, 8,7,6}, {7, 6,2,5} };
+string[,] regiones = new string[2, 3] { {"Argentina","Brasil","Peru"}, {"USA",";Mexico","Costa Rica"} };
+ 
+//Tambien podemos omitir el tamaño de la matriz
+int[,] numeros = new int[,] { {1, 2,3,4}, {9, 8,7,6}, {7, 6,2,5} };
+string[,] regiones = new string[,] { {"Argentina","Brasil","Peru"}, {"USA",";Mexico","Costa Rica"} };
+ 
+//Y tambien podemos olvidarnos del operador
+int[,] numeros =  { {1, 2,3,4}, {9, 8,7,6}, {7, 6,2,5} };
+string[,] regiones = { {"Argentina","Brasil","Peru"}, {"USA",";Mexico","Costa Rica"} };
+
+valores[1]      = 4;   //Cambia el valor del indice 1 a 4
+numeros[2,1] = 10;   //Cambia el valor de indice 2,1 a 10
+ 
+//En un arreglo de arreglos:
+matriz[2][1] = 4;
+
+// Recorrer arreglos
+int[] sueldos;
+sueldos = new int[5];
+for (int f = 0; f < 5; f++)
+{
+	Console.Write("Ingrese valor de la componente:");
+	sueldos[f] = int.Parse(Console.ReadLine());
+}
+
+int[] valores = {3, 5, 2, 1, 5, 3, 7, 9, 8};
+foreach (int i in valores)
+{
+   Console.Write("{0} ", i);
+}
+
+//también en arreglos multidimensionales
+int[,] numeros = new int[2, 3] {{5,2,1}, {7,4,5}, {2,9 ,10}};
+foreach(int i in numeros)
+{
+   Console.Write("{0} ", i);
+}
+
+
+***************************************
+*** MANEJO DE ERRORES
+***************************************
+Console.WriteLine("Ingresa solo numeros ENTEROS:");
+try
+{
+	int num = int.Parse(Console.ReadLine());
+}
+catch (FormatException e)
+{
+	Console.WriteLine("ERROR: Solo es permitido ingresar ENTEROS.");
+	Console.WriteLine("ERROR: " + e);
+}
+
+try
+{
+	int a = 10, b = 0;
+	int res = a / b;
+}
+catch(Exception e)
+{
+	Console.WriteLine($"Opppsss ... {e.Message}");
+}
+
+
+*************************************************
+*** QUE ES LA PROGRAMACION ORIENTADA A OBJETOS
+*************************************************
+-> Es un paradigma de programacion.
+-> Es poder REUTILIZAR codigo y clases en diferentes partes del programa, permitiendo no duplicar codigo.
+-> Permite la MANTENIBILIDAD del programa y del codigo.
+-> Permite que le codigo sea MODIFICABLE.
+-> Una ventaja es poder DETECTAR MEJOR LOS ERRORES ya que todo el codigo esta dividido en clases.
+-> CARACTERISTICAS DE LA POO:
+	>> ABSTRACCION: Permite que los objetos interactuen sin necesidad de conocer los detalles del funcionamiento.
+	>> ENCAPSULAMIENTO: Permite empaquetar en un mismo contenedor o plantilla tanto las caracteristicas de los objetos como sus comportamientos.
+						Permite establecer niveles de acceso.
+	>> HERENCIA: Nos permite clasificar los elementos de nuestros sistema.
+				Tambien permite la reutilizacion de codigo.
+	>> POLIMORFISMO: Permite a un objeto presentar distintos comportamientos segun el contexto donde se encuentre.
+-> QUE ES UNA CLASE EN POO:
+	>> Es un elemento de la POO que actua como una plantilla y define las caracteristicas y comportamientos de una entidad.
+	>> Es como un molde de la cual vamos a poder definir entidades o objetos.
+	>> Una clase define:
+		>> caracteristicas / atributos
+		>> comportamientos / metodos
+-> QUE ES UN OBJETO:
+	>> Es una instancia de una CLASE
+-> QUE ES UNA INSTANCIA:
+	>> Es la creacion de un objeto a partir de una clase.
+	>> Una instancia puede tener:
+		-> Estado: Representa los valores de cada caracteristica o atributo del objeto.
+		-> Comportamiento: Acciones o metodos que va poder realizar la instancia.
+		-> Identidad: Es el nombre unico que permite reconocer al objeto y diferenciarlo de otro.
+-> MODIFICADORES DE ACCESO:
+	>> Indican el nivel de accesibilidad que tendra un tipo o miembro de un tipo:
+		-> PUBLIC: Este nivel es menos restrictivo.
+		-> PRIVATE: Representa el nivel mas restrictivo (Solo son accesibles desde la misma clase).
+		-> PROTECTED: Implica un acceso limitado (Se puede acceder desde la clase derivada).
+		-> INTERNAL: Implica un acceso limitado (Se puede acceder desde la clase dentro de los mismos archivos).
+-> QUE ES UN ATRIBUTO:
+	>> Define las caracteristicas de un objeto.
+-> QUE ES UN METODO:
+	>> Define el comportamiento o las acciones que puede realizar un objeto.
+-> QUE ES UN CONSTRUCTOR:
+	>> Es un metodo que se ejecuta automaticamente cuando se instancia una clase.
+	>> Las clases pueden tener 1 o mas constructores.
+
+
+***************************************
+*** DECLARAR UNA CLASE Y DEFINIR OBJETOS
+***************************************
+using System;
+namespace ManejoDeClases
+{
+    public class Persona
+    {
+        #region Atributos
+        private string nombre;
+        private int edad;
+        #endregion
+
+        #region Constructor
+        public Persona()
+        {
+        }
+        #endregion
+
+        #region Metodos
+        public void Inicializar()
+        {
+            Console.Write("Ingrese el nombre: ");
+            nombre = Console.ReadLine();
+
+            Console.Write("Ingrese la edad: ");
+            edad = int.Parse(Console.ReadLine());
+        }
+
+        public void Imprimir()
+        {
+            Console.Write("Nombre: ");
+            Console.WriteLine(nombre);
+
+            Console.Write("Edad: ");
+            Console.WriteLine(edad);
+        }
+
+        public void EsMayorEdad()
+        {
+            if (edad >= 18)
+            {
+                Console.Write("Es mayor de edad");
+            }
+            else
+            {
+                Console.Write("No es mayor de edad");
+            }
+
+            Console.ReadKey();
+        }
+        #endregion
+    }
+}
+
+Persona per1 = new Persona();
+per1.Inicializar();
+per1.Imprimir();
+per1.EsMayorEdad();
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
